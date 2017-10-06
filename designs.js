@@ -67,7 +67,8 @@ function clearGrid(evt) {
 		jQuery functions are forbidden for creating core functionality. In fact the Project Overview
 		states quite the opposite and encourages the use of jQuery in the project over vanilla JavaScript
 	 */
-	$("#pixel_canvas").empty();
+	// $("#pixel_canvas").empty();
+	while(table.rows.length !== 0) table.deleteRow(0); // Here is vanilla though
 
 	makeGrid(); // Make the grid
 }
