@@ -4,10 +4,10 @@ var colour = '#000';
 
 var table = document.getElementById('pixel_canvas');
 
-document.getElementById('input_width').addEventListener('change', getWidth);
-document.getElementById('input_height').addEventListener('change', getHeight);
-document.getElementById('submit_button').addEventListener('click', clearGrid);
-document.getElementById('colorPicker').addEventListener('change', getColour);
+$('#input_width').change(getWidth);
+$('#input_height').change(getHeight);
+$('#submit_button').click(clearGrid);
+$('#colorPicker').change(getColour);
 
 function getColour(evt) {
 	colour = evt.target.value;
