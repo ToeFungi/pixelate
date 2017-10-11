@@ -72,5 +72,5 @@ function setBlockColour(evt) {
 }
 
 function resetBlockColour(evt) {
-	evt.style.background = '#fff';
+	evt.style.background = null;
 }
