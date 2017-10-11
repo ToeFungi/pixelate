@@ -50,6 +50,7 @@ function makeGrid() {
 
 			var td = document.createElement("td"); // Instantiate cell for row
 			td.setAttribute('onclick', 'setBlockColour(this)'); // Set onclick
+			td.setAttribute('oncontextmenu', 'resetBlockColour(this)'); // Set onclick
 
 			tr.appendChild(td); // Append to row
 		}
@@ -61,19 +62,15 @@ function makeGrid() {
 // Clear current grid
 function clearGrid(evt) {
 	evt.preventDefault(); // Does exactly what it says... Prevents default action of form submission
-
-	/*
-		Please see top comment in response to using this jQuery function. Rubric does not stipulate that
-		jQuery functions are forbidden for creating core functionality. In fact the Project Overview
-		states quite the opposite and encourages the use of jQuery in the project over vanilla JavaScript
-	 */
-	// $("#pixel_canvas").empty();
-	while(table.rows.length !== 0) table.deleteRow(0); // Here is vanilla though
-
+	table.innerHTML = '';
 	makeGrid(); // Make the grid
 }
 
 // Set background of selected cell
 function setBlockColour(evt) {
 	evt.style.background = colour;
+}
+
+function resetBlockColour(evt) {
+	evt.style.background = '#fff';
 }
